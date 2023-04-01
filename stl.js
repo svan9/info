@@ -36,6 +36,7 @@ async function readLocalFile(path) {
 [...$("flist")].forEach(async (e) => {
     const fname = [...e.attributes].find((a) => a.name == "name").value;
     const fval = (await readLocalFile(fname)).trim().split(/\r\n/gm);
+    console.log(fval);
     let htmlList = "";
     fval.forEach((val) => {
         htmlList += `<label title="${val.split(" ")[0]}"><a href="${val.split(" ")[0]}">${
