@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Cambo&family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+$color: #444a5f;
+
+body {
+    display: flex;
+    background-color: #dad8da;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0px;
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a0 #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #dad8da;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #3b4060;
+}
+
+#vid1 {
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+}
+
+.color {
+    color: $color;
+}
+
+.flist {
+    transform: scale(1);
+    display: flex;
+    font-family: "Cambo", monospace;
+    padding: 1rem;
+    padding-top: 2rem;
+    flex-direction: column;
+    list {
+        margin-left: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 10vh;
+        label {
+            margin-right: 2rem;
+            border-radius: 0rem 0rem 0rem 0.5rem;
+            a {
+                &::before {
+                    content: "➤";
+                }
+            }
+        }
+    }
+}
+.cambo {
+    font-family: "Cambo", sans-serif;
+}
+.bold {
+    font-weight: bold;
+}
+.unselect {
+    user-select: none;
+}
+.pointer {
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column
+}
+.pd1 {
+    padding: 1rem;
+}
+
+.flex.center {
+    flex-direction: column;
+    align-items: center;
+}
+
+p2 {
+    text-align: unset;
+    text-indent: 30px;
+}
+
+.w1 {
+    width: 99%;
+}
+.l2 {
+    line-height: 2;
+}
+
+a {
+    text-decoration: none;
+    color: $color;
+    font-family: "Cambo", sans-serif;
+    &:hover {
+        color: $color;
+    }
+}
