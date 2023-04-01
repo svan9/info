@@ -30,12 +30,17 @@ async function readLocalFile(path) {
     e.parentNode.replaceChild(div, e);
 });
 [...$("tab")].forEach(function (e) {
-    e.children[0].innerHTML = "&#10240;&#10240;&#10240;&#10240;" + e.children[0].innerHTML;
+    e.children[0].innerHTML =
+        "&#10240;&#10240;&#10240;&#10240;" + e.children[0].innerHTML;
 });
 
 [...$("flist")].forEach(async (e) => {
     const fname = [...e.attributes].find((a) => a.name == "name").value;
-    const fval = (await readLocalFile(fname)).trim().split(/;/gm).filter(e=>e!=undefined);
+    const fval = (await readLocalFile(fname))
+        .trim()
+        .replace(/\r\n/gm, "")
+        .split(/;/gm)
+        .filter((e) => e.length != 0);
     let htmlList = "";
     fval.forEach((val) => {
         htmlList += `<label title="${val.split(" ")[0]}"><a href="${val.split(" ")[0]}">${
